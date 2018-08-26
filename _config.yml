@@ -3,17 +3,15 @@ markdown:         kramdown
 highlighter:      rouge
 
 # Setup
-title:            BlackDoc
+title:            Mayaul Tech Blog
 tagline:          Black Theme for Jekyll
-description:      "A two-column black theme with a scrolling sidebar. Ideal for sites requiring a master-detail layout, e.g. documentation, cheatsheets, lyrics, notes..."
-url:              https://github.com/karloespiritu/blackdoc
+description:      "Java back-end developer"
+url:              https://github.com/mayaul
 baseurl:          /
-                  # the optional subpath of your site, e.g. "/my-jekyll-site/"
-                  # This will apply to all pages in your Jekyll site.
 
 author:
-  name:           Karlo Espiritu
-  url:            https://twitter.com/karloespiritu
+  name:           Ko Jeongseop
+  url:            https://www.facebook.com/jeongseop.ko
 
 paginate:         5
 # paginate_path:    '/page:num'
@@ -25,7 +23,7 @@ plugins:
   - jekyll-paginate
 
 # Custom vars
-version:            2.0.1
+version:            1.0.0
 
 github:
-  repo:             https://github.com/karloespiritu/blackdoc
+  repo:             https://github.com/mayaul/mayaul.github.io
