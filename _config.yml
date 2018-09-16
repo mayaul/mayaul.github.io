@@ -3,7 +3,7 @@ markdown:         kramdown
 highlighter:      rouge
 
 # Setup
-title:            Mayaul Tech Blog
+title:            Just Do It
 tagline:          Black Theme for Jekyll
 description:      "Java back-end developer"
 url:              https://github.com/mayaul
