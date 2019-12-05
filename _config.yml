@@ -27,6 +27,11 @@ sass:
 
 # Comments
 disqus_shortname: jeongseopko
+utterances:
+  enable: true
+  repo: mayaul/mayaul.github.io
+  issue_term: title
+  theme: github-light
 
 # Social
 # if you don't have any of social below, comment the line.
