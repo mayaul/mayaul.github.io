@@ -1,5 +1,5 @@
 # Allow crawling of all content
 User-agent: *
-Disallow:
+Allow: /
 
 Sitemap: https://mayaul.github.io/sitemap.xml
