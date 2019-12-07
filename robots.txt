@@ -2,4 +2,4 @@
 User-agent: *
 Disallow:
 
-https://mayaul.github.io/sitemap.xml
+Sitemap: https://mayaul.github.io/sitemap.xml
