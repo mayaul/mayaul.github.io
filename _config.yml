@@ -35,9 +35,9 @@ utterances:
 
 # Social
 # if you don't have any of social below, comment the line.
-#google:
+google:
   #plus:            #username
-  #analytics:
+  analytics: UA-154168482-1
   #verify:
   #ad-client:
   #ad-slot:
