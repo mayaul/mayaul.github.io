@@ -9,7 +9,12 @@ tag:
 - multi
 - spring
 ---
+
+* 이글은 제가 작성한 우아한 테크블로그에 있는 내용을 복사해서 왔습니다. [링크](http://woowabros.github.io/experience/2019/01/04/multi-key-spring-cache.html)
+
+---
 ## 들어가며
+
 이전에는 Google 의 Guava 를 이용하여 Local Cache 기능을 구현을 했습니다. ['guava'](https://github.com/google/guava)
 
 단순하게 Key/Value 에 대해서 가장 쉽게 사용을 할 수 있는 것중의 하나가 Spring 에서 제공을 해주는 ['Cache Abstraction']([https://docs.spring.io/spring/docs/current/spring-framework-reference/integration.html#cache) 을 사용을 하는 것으로 생각 됩니다.
