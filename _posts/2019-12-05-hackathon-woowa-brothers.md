@@ -44,7 +44,7 @@ tag:
 데이터를 몽고디비에 밀어넣기..!!!
 
 몽고디비라는것을 들어보기만 했지, 처음 접하는거라 삽질을 많이 했다..
-하면서 배운 내용은 [mongo db import 방법]('https://mayaul.github.io/mongo-db/') 여기에 써놨다.
+하면서 배운 내용은 [mongo db import 방법](https://mayaul.github.io/mongo-db) 여기에 써놨다.
 
 ## 드디어 완성..! 설명회 시작..
 드디어 다 만들고 우리의 작품을 설명해보자..
