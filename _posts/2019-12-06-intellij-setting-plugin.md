@@ -39,8 +39,8 @@ Intellij 에서 TestCode 실행시, 기대결과가 틀려도 Read, 에러가 �
 기대결과가 틀렸을 때, Yellow 로 표시하고 싶다면 `Intellij IDEA` 로 변경한다.<br/>
 <img src="/assets/img/posts/intellij_setting_plugin/intellij-gradle.png" />
 #### Preferences new projects
-새로운 프로젝트를 열거나 만들때, 기본적으로 설정해야하는 것들이 있다.
-`Preferences | Build, Execution, Deployment | Compiler | Annotation Processors` 에 `Enable annotation processing` 이다.
+새로운 프로젝트를 열거나 만들때, 기본적으로 설정해야하는 것들이 있다.  
+대표적으로 `Preferences | Build, Execution, Deployment | Compiler | Annotation Processors` 에 `Enable annotation processing` 이다.
 ![Enable annotation processing](/assets/img/posts/intellij_setting_plugin/enable-annotation-processing.png)
 `File -> Other Settings -> Preferences new projects...` 라는 메뉴가 있다.
 ![Preferences new projects](/assets/img/posts/intellij_setting_plugin/preferences-new-project.png) 에서 설정을 해주면 신규 프로젝를 생성을 할때 기본값으로 설정 할 수있다.
