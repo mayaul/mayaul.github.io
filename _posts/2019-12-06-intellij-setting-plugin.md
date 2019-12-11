@@ -4,6 +4,7 @@ title: "Intellij setting 과 plugin"
 excerpt: "개발하면서 유용한 Intellij plugin 과 하면 좋은 setting"
 date: 2019-12-06 00:00:00 +0900
 comments: true
+changefreq : daily
 tag:
 - intellij
 - setting
@@ -33,7 +34,13 @@ tag:
 #### Font
 [D2coding]('https://github.com/naver/d2codingfont') 몇가지 세처를 써봤지만, 한글도 잘 나오고 개발에 필요한 `i,I,l` 와 `0, O`구분이 명확한다
 #### Gradle 
-Build, Execution, Deployment > Build Tools > Gradle 에 설정이 IntelliJ IDEA 특정버전에 gradle 로 변경되었다.<br/>
+`Build, Execution, Deployment | Build Tools | Gradle` 에 설정이 IntelliJ IDEA 특정버전에 gradle 로 변경되었다.<br/>
 Intellij 에서 TestCode 실행시, 기대결과가 틀려도 Read, 에러가 나도 Red 로 표시된다. <br/>
 기대결과가 틀렸을 때, Yellow 로 표시하고 싶다면 `Intellij IDEA` 로 변경한다.<br/>
 <img src="/assets/img/posts/intellij_setting_plugin/intellij-gradle.png" />
+#### Preferences new projects
+새로운 프로젝트를 열거나 만들때, 기본적으로 설정해야하는 것들이 있다.
+`Preferences | Build, Execution, Deployment | Compiler | Annotation Processors` 에 `Enable annotation processing` 이다.
+![Enable annotation processing](/assets/img/post/intellij_setting_plugin/enable-annotation-processing.png)
+`File -> Other Settings -> Preferences new projects...` 라는 메뉴가 있다.
+![Preferences new projects](/assets/img/post/intellij_setting_plugin/preferences-new-project.png) 에서 설정을 해주면 신규 프로젝를 생성을 할때 기본값으로 설정 할 수있다.
