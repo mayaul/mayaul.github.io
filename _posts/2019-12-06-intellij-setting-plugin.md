@@ -15,13 +15,33 @@ tag:
  
 ## Plugin
 #### [Advanced Java Folding](https://plugins.jetbrains.com/plugin/9320-advanced-java-folding)
+* Java code 를 읽기 쉽게 변환해 준다.
+
 #### [DbUnit Extractor](https://plugins.jetbrains.com/plugin/7958-dbunit-extractor)
+* DbUnit 테스트를 진행을 하면 DB 의 데이터를 쉽게 xml 로 변환을 하고 싶을 요구가 생길때가 있다.
+이때 사용하면 괜찮은 plugin
+* DBUnit 과 이 plugin 에 대해서 자세히 알고싶다면 링크 참고 ([DBUnit](http://woowabros.github.io/experience/2019/11/06/db-unit.html))
+
 #### [Flyway Migration Creation](https://plugins.jetbrains.com/plugin/8597-flyway-migration-creation)
+* Flayway 를 사용을 하면 자동으로 버전된 sql 파일을 만들고 싶을때가 있다. 이때 사용하면 좋은 plugin
+
 #### [GitToolBox](https://plugins.jetbrains.com/plugin/7499-gittoolbox)
+* 가끔 내가 어떤 branch 에서 작업을 하고 있는지 모르고 develop, master 등에 작업을 하고 습관적으로 push 하는것을 예방을 하고 현재 branch 를 알려주는 plugin
+* branch 별로 pull / push 할 것이 있는지도 알려준다.
+* 그 이외에도 추가적으로 많은 기능이 있지만.. 저는 주로 이 기능만 써요
+
 #### [Grep Console](https://plugins.jetbrains.com/plugin/7125-grep-console)
+* 무조건 필수.. 이거 없으면 intellij console log 볼때 너무 힘들어요
+
 #### [Lombok](https://plugins.jetbrains.com/plugin/6317-lombok)
+* lombok 을 사용한다면 필수
+
 #### [Material Theme UI](https://plugins.jetbrains.com/plugin/8006-material-theme-ui)
+* 뭔가 화려한 intellij theme 를 원한다면 좋은 plugin
+
 #### [Rainbow Brackets](https://plugins.jetbrains.com/plugin/10080-rainbow-brackets)
+* `{ ... }`, `(((( ... ))))` 가 많다면 무지개색상으로 구분을 해준다.
+  
 #### [Request mapper](https://plugins.jetbrains.com/plugin/9567-request-mapper)
 #### [RestfulToolkit](https://plugins.jetbrains.com/plugin/10292-restfultoolkit)
 #### [Sexy Editor](https://plugins.jetbrains.com/plugin/1833-sexy-editor)
