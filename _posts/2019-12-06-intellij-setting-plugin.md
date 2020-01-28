@@ -12,7 +12,7 @@ tag:
 ---
 ## 들어가며
  Intellij IDEA 를 이용해서 Java(Spring) 개발을 하면서 설정을 하면 좋은 것과 유용한 plugin 모음
- 
+
 ## Plugin
 #### [Advanced Java Folding](https://plugins.jetbrains.com/plugin/9320-advanced-java-folding)
 * Java code 를 읽기 쉽게 변환해 준다.
@@ -41,26 +41,61 @@ tag:
 
 #### [Rainbow Brackets](https://plugins.jetbrains.com/plugin/10080-rainbow-brackets)
 * `{ ... }`, `(((( ... ))))` 가 많다면 무지개색상으로 구분을 해준다.
-  
+
 #### [Request mapper](https://plugins.jetbrains.com/plugin/9567-request-mapper)
+* Rest API 를 찾기 쉽게 해준다.
+
 #### [RestfulToolkit](https://plugins.jetbrains.com/plugin/10292-restfultoolkit)
+* RestfulToolkit 이라는 view 가 생기며, 거기서 검색을 하면 full url 을 복사할 수 있다.
+* Controller class 와 method 에서 rest api 분리해놓고 사용한다면 full url 복사시 유용하다.
+
 #### [Sexy Editor](https://plugins.jetbrains.com/plugin/1833-sexy-editor)
-#### [Show REST Services](https://plugins.jetbrains.com/plugin/9503-show-rest-services)
+* editor 배경화면을 언어별로 설정을 할 수 있다.
+
 #### [SonarLint](https://plugins.jetbrains.com/plugin/7973-sonarlint)
+* sonarqube 를 사용을 한다면, intellij 에서 분석을 돌려 볼 수 있다.
 #### [String Manipulation](https://plugins.jetbrains.com/plugin/2162-string-manipulation)
+* string 관련 반복성 작업에 대한 변경작업이 필요 할때 유용한 plugin
+
 #### [Upsource Integration](https://plugins.jetbrains.com/plugin/7431-upsource-integration)
+* upsource 를 이용하여, code review 를 한다면 필수 plugin
 
 ## Setting
-#### Font
-[D2coding]('https://github.com/naver/d2codingfont') 몇가지 세처를 써봤지만, 한글도 잘 나오고 개발에 필요한 `i,I,l` 와 `0, O`구분이 명확한다
-#### Gradle 
-`Build, Execution, Deployment | Build Tools | Gradle` 에 설정이 IntelliJ IDEA 특정버전에 gradle 로 변경되었다.<br/>
-Intellij 에서 TestCode 실행시, 기대결과가 틀려도 Read, 에러가 나도 Red 로 표시된다. <br/>
-기대결과가 틀렸을 때, Yellow 로 표시하고 싶다면 `Intellij IDEA` 로 변경한다.<br/>
-<img src="/assets/img/posts/intellij_setting_plugin/intellij-gradle.png" />
 #### Preferences new projects
-새로운 프로젝트를 열거나 만들때, 기본적으로 설정해야하는 것들이 있다.  
-대표적으로 `Preferences | Build, Execution, Deployment | Compiler | Annotation Processors` 에 `Enable annotation processing` 이다.
+* 새로운 프로젝트를 열거나 만들때, 기본적으로 설정해야하는 것들이 있다.
+* 대표적으로 `Preferences | Build, Execution, Deployment | Compiler | Annotation Processors` 에 `Enable annotation processing` 이다.
+* `File -> Other Settings -> Preferences new projects...` 라는 메뉴가 있다.
+* ![Preferences new projects](/assets/img/posts/intellij_setting_plugin/preferences-new-project.png) 에서 설정을 해주면 신규 프로젝를 생성을 할때 기본값으로 설정 할 수있다.
+
+#### Font
+* [D2coding]('https://github.com/naver/d2codingfont') 몇가지 서체를 써봤지만, 한글도 잘 나오고 개발에 필요한 `i,I,l` 와 `0, O`구분이 명확한다
+
+#### Gradle
+* path: `Build, Execution, Deployment | Build Tools | Gradle`
+* IntelliJ IDEA 특정버전에 gradle 로 변경되었다.
+* Intellij 에서 TestCode 실행시, 기대결과가 틀려도 Read, 에러가 나도 Red 로 표시된다.
+* 기대결과가 틀렸을 때, Yellow 로 표시하고 싶다면 `Intellij IDEA` 로 변경한다.<br/>
+<img src="/assets/img/posts/intellij_setting_plugin/intellij-gradle.png" />
+
+#### Annotation Processors
+* path: `Preferences | Build, Execution, Deployment | Compiler | Annotation Processors` 에 `Enable annotation processing`
 ![Enable annotation processing](/assets/img/posts/intellij_setting_plugin/enable-annotation-processing.png)
-`File -> Other Settings -> Preferences new projects...` 라는 메뉴가 있다.
-![Preferences new projects](/assets/img/posts/intellij_setting_plugin/preferences-new-project.png) 에서 설정을 해주면 신규 프로젝를 생성을 할때 기본값으로 설정 할 수있다.
+
+#### Task
+* path: `Preferences | Tools | Tasks`
+* 회사에서는 jira 를 사용하고 있다.
+    - jira 의 이슈번호를 이용해서 git feature branch 를 생성을 하고, jira ticket 번호를 commit message 를 넣어야 한다면 설정하면 좋다.
+* Changelist name format: `${id} ${summary}`
+    - `Version control` 에 있는 `Local Changes` 에 changelist 를 자동으로 만들어 준다.
+* Feature branch name format: `feature/${id}`
+    - 자동으로 지정된 format 으로 branch 이름을 만들어 준다.
+* `Preferences | Tools | Tasks | Servers` 여기로 가서 jira 서버 설정을 해주면 된다.
+
+#### Issue Navigation
+`Preferences | Version Control | Issue Navigation`
+* 이전회사와 현 회사에서 git commit 을 할 때, jira 번호를 필수로 넣고 있다. 이 기능을 활성화 하면, git log 를 볼 때 바로 jira 내용으로 이동을 할 수 있다.
+    - Issue ID: [A-Z]+\-\d+
+    - Issue Link: https://jira.woowa.in/browse/$0
+        + git commit 시에 `[`,`]` 으로 jira 번호를 감싸고 있다.
+
+#### Spock 에서 자동으로 변수를 만들 때 def 가 아닌 정확한 타입으로 명시하기
