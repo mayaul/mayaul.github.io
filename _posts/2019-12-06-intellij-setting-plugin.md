@@ -98,4 +98,7 @@ tag:
     - Issue Link: https://jira.woowa.in/browse/$0
         + git commit 시에 `[`,`]` 으로 jira 번호를 감싸고 있다.
 
-#### Spock 에서 자동으로 변수를 만들 때 def 가 아닌 정확한 타입으로 명시하기
+#### Spock(groovy) 에서 자동으로 변수를 만들 때 def 가 아닌 정확한 타입으로 명시하기
+* groovy 에서 변수를 자동으로 생성을 하면 `def` 라는 type 으로 생성이 된다.
+** 이때 `shift+tap` 을 눌러 def 로 포커스를 변경을 한다음에 해당 변수의 정확한 타입으로 변경을 하면 그 다음부터는 기억을 해서 모든 변수 생성시에 정확한 타입으로 생성이 된다.
+
