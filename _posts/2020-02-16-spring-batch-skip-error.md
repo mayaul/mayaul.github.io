@@ -16,7 +16,7 @@ tag:
 * [예제](https://github.com/mayaul/spring-batch-fault-tolerant-example) 참고해주세요.
 
 ## Skip
-* LIMIT 로 설정한 갯수를 초과한 에러가 발생이되면 step 은 실패하게 됩니다.
+
 ``` java
 return stepBuilderFactory.get("sample step")
     // ...
@@ -28,6 +28,7 @@ return stepBuilderFactory.get("sample step")
     // ...
     .build();
 ```
+* `skipLimit` 로 설정한 갯수를 초과한 에러가 발생이되면 step 은 실패하게 됩니다.
 * processor 중간에 몇 개 아이템에서 오류가 발생을 하면 해당 아이템은 skip 이 되므로 `chunkSize` 보다 작게 writer 에 전달이 될 수 있습니다.
 * processor 가 여러개가 설정이 되어있는경우, 몇번째 processor 에서 오류가 발생했는지와 상관 없이 첫번째 processor 부터 다시 시작합니다.
     - 이 이유는 제 생각에는 특정 processor 의 오류가 이전의 processor 에 영향이 있을지도 모르기 때문에 처음부터 다시 검토하는것으로 생각이 됩니다.
