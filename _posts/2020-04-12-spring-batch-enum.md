@@ -32,8 +32,10 @@ spring:
     initialize-schema: always
 ```
 <hr/>
-    - spring.batch.initialize-schema: always 로 설정하면 spring batch 에서 사용하는 table 을 자동으로 생성을 하게 됩니다.
-        + 기본값은 `EMBEDDED` 이며, `ALWAYS, EMBEDDED, NEVER` 옵션도 있습니다.
+    
+* spring.batch.initialize-schema: always 로 설정하면 spring batch 에서 사용하는 table 을 자동으로 생성을 하게 됩니다.
+    - 기본값은 `EMBEDDED` 이며, `ALWAYS, EMBEDDED, NEVER` 옵션도 있습니다.
+
 <hr/>
 ``` java
     public Job sampleJob() {
@@ -103,36 +105,31 @@ spring:
     - 당연히 Listener 에서도 `TestEnum.C` 를 사용하는 곳을 모두 지워도 아래와 같은 오류를 만나게 됩니다.<br/>
 <hr/>
     ```java
-Caused by: com.fasterxml.jackson.databind.exc.InvalidFormatException: Cannot deserialize value of type `io.github.mayaul.batch.job.TestEnum` from String "C": value not one of declared Enum instance names: [A, B]
- at [Source: (ByteArrayInputStream); line: 1, column: 178] (through reference chain: java.util.HashMap["jobExecutionContextKey"]->java.util.ArrayList[2])
-	at com.fasterxml.jackson.databind.exc.InvalidFormatException.from(InvalidFormatException.java:67) ~[jackson-databind-2.9.9.3.jar:2.9.9.3]
-	at com.fasterxml.jackson.databind.DeserializationContext.weirdStringException(DeserializationContext.java:1549) ~[jackson-databind-2.9.9.3.jar:2.9.9.3]
-	at com.fasterxml.jackson.databind.DeserializationContext.handleWeirdStringValue(DeserializationContext.java:911) ~[jackson-databind-2.9.9.3.jar:2.9.9.3]
-	at com.fasterxml.jackson.databind.deser.std.EnumDeserializer._deserializeAltString(EnumDeserializer.java:255) ~[jackson-databind-2.9.9.3.jar:2.9.9.3]
-	at com.fasterxml.jackson.databind.deser.std.EnumDeserializer.deserialize(EnumDeserializer.java:179) ~[jackson-databind-2.9.9.3.jar:2.9.9.3]
-	at com.fasterxml.jackson.databind.jsontype.impl.AsArrayTypeDeserializer._deserialize(AsArrayTypeDeserializer.java:116) ~[jackson-databind-2.9.9.3.jar:2.9.9.3]
-	at com.fasterxml.jackson.databind.jsontype.impl.AsArrayTypeDeserializer.deserializeTypedFromAny(AsArrayTypeDeserializer.java:71) ~[jackson-databind-2.9.9.3.jar:2.9.9.3]
-	at com.fasterxml.jackson.databind.deser.std.UntypedObjectDeserializer$Vanilla.deserializeWithType(UntypedObjectDeserializer.java:712) ~[jackson-databind-2.9.9.3.jar:2.9.9.3]
-	at com.fasterxml.jackson.databind.deser.std.CollectionDeserializer.deserialize(CollectionDeserializer.java:288) ~[jackson-databind-2.9.9.3.jar:2.9.9.3]
-	at com.fasterxml.jackson.databind.deser.std.CollectionDeserializer.deserialize(CollectionDeserializer.java:245) ~[jackson-databind-2.9.9.3.jar:2.9.9.3]
-	at com.fasterxml.jackson.databind.deser.std.CollectionDeserializer.deserialize(CollectionDeserializer.java:27) ~[jackson-databind-2.9.9.3.jar:2.9.9.3]
-	at com.fasterxml.jackson.databind.jsontype.impl.AsArrayTypeDeserializer._deserialize(AsArrayTypeDeserializer.java:116) ~[jackson-databind-2.9.9.3.jar:2.9.9.3]
-	at com.fasterxml.jackson.databind.jsontype.impl.AsArrayTypeDeserializer.deserializeTypedFromAny(AsArrayTypeDeserializer.java:71) ~[jackson-databind-2.9.9.3.jar:2.9.9.3]
-	at com.fasterxml.jackson.databind.deser.std.UntypedObjectDeserializer$Vanilla.deserializeWithType(UntypedObjectDeserializer.java:712) ~[jackson-databind-2.9.9.3.jar:2.9.9.3]
-	at com.fasterxml.jackson.databind.deser.std.MapDeserializer._readAndBindStringKeyMap(MapDeserializer.java:529) ~[jackson-databind-2.9.9.3.jar:2.9.9.3]
-	at com.fasterxml.jackson.databind.deser.std.MapDeserializer.deserialize(MapDeserializer.java:364) ~[jackson-databind-2.9.9.3.jar:2.9.9.3]
-	at com.fasterxml.jackson.databind.deser.std.MapDeserializer.deserialize(MapDeserializer.java:29) ~[jackson-databind-2.9.9.3.jar:2.9.9.3]
-	at com.fasterxml.jackson.databind.ObjectMapper._readMapAndClose(ObjectMapper.java:4014) ~[jackson-databind-2.9.9.3.jar:2.9.9.3]
-	at com.fasterxml.jackson.databind.ObjectMapper.readValue(ObjectMapper.java:3078) ~[jackson-databind-2.9.9.3.jar:2.9.9.3]
-	at org.springframework.batch.core.repository.dao.Jackson2ExecutionContextStringSerializer.deserialize(Jackson2ExecutionContextStringSerializer.java:70) ~[spring-batch-core-4.1.2.RELEASE.jar:4.1.2.RELEASE]
-	at org.springframework.batch.core.repository.dao.Jackson2ExecutionContextStringSerializer.deserialize(Jackson2ExecutionContextStringSerializer.java:50) ~[spring-batch-core-4.1.2.RELEASE.jar:4.1.2.RELEASE]
-	at org.springframework.batch.core.repository.dao.JdbcExecutionContextDao$ExecutionContextRowMapper.mapRow(JdbcExecutionContextDao.java:325) ~[spring-batch-core-4.1.2.RELEASE.jar:4.1.2.RELEASE]
-	... 35 common frames omitted
-
-2020-04-13 00:23:23.811  INFO 70600 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
-2020-04-13 00:23:23.826  INFO 70600 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
-
-Process finished with exit code 1
+    Caused by: com.fasterxml.jackson.databind.exc.InvalidFormatException: Cannot deserialize value of type `io.github.mayaul.batch.job.TestEnum` from String "C": value not one of declared Enum instance names: [A, B]
+     at [Source: (ByteArrayInputStream); line: 1, column: 178] (through reference chain: java.util.HashMap["jobExecutionContextKey"]->java.util.ArrayList[2])
+        at com.fasterxml.jackson.databind.exc.InvalidFormatException.from(InvalidFormatException.java:67) ~[jackson-databind-2.9.9.3.jar:2.9.9.3]
+        at com.fasterxml.jackson.databind.DeserializationContext.weirdStringException(DeserializationContext.java:1549) ~[jackson-databind-2.9.9.3.jar:2.9.9.3]
+        at com.fasterxml.jackson.databind.DeserializationContext.handleWeirdStringValue(DeserializationContext.java:911) ~[jackson-databind-2.9.9.3.jar:2.9.9.3]
+        at com.fasterxml.jackson.databind.deser.std.EnumDeserializer._deserializeAltString(EnumDeserializer.java:255) ~[jackson-databind-2.9.9.3.jar:2.9.9.3]
+        at com.fasterxml.jackson.databind.deser.std.EnumDeserializer.deserialize(EnumDeserializer.java:179) ~[jackson-databind-2.9.9.3.jar:2.9.9.3]
+        at com.fasterxml.jackson.databind.jsontype.impl.AsArrayTypeDeserializer._deserialize(AsArrayTypeDeserializer.java:116) ~[jackson-databind-2.9.9.3.jar:2.9.9.3]
+        at com.fasterxml.jackson.databind.jsontype.impl.AsArrayTypeDeserializer.deserializeTypedFromAny(AsArrayTypeDeserializer.java:71) ~[jackson-databind-2.9.9.3.jar:2.9.9.3]
+        at com.fasterxml.jackson.databind.deser.std.UntypedObjectDeserializer$Vanilla.deserializeWithType(UntypedObjectDeserializer.java:712) ~[jackson-databind-2.9.9.3.jar:2.9.9.3]
+        at com.fasterxml.jackson.databind.deser.std.CollectionDeserializer.deserialize(CollectionDeserializer.java:288) ~[jackson-databind-2.9.9.3.jar:2.9.9.3]
+        at com.fasterxml.jackson.databind.deser.std.CollectionDeserializer.deserialize(CollectionDeserializer.java:245) ~[jackson-databind-2.9.9.3.jar:2.9.9.3]
+        at com.fasterxml.jackson.databind.deser.std.CollectionDeserializer.deserialize(CollectionDeserializer.java:27) ~[jackson-databind-2.9.9.3.jar:2.9.9.3]
+        at com.fasterxml.jackson.databind.jsontype.impl.AsArrayTypeDeserializer._deserialize(AsArrayTypeDeserializer.java:116) ~[jackson-databind-2.9.9.3.jar:2.9.9.3]
+        at com.fasterxml.jackson.databind.jsontype.impl.AsArrayTypeDeserializer.deserializeTypedFromAny(AsArrayTypeDeserializer.java:71) ~[jackson-databind-2.9.9.3.jar:2.9.9.3]
+        at com.fasterxml.jackson.databind.deser.std.UntypedObjectDeserializer$Vanilla.deserializeWithType(UntypedObjectDeserializer.java:712) ~[jackson-databind-2.9.9.3.jar:2.9.9.3]
+        at com.fasterxml.jackson.databind.deser.std.MapDeserializer._readAndBindStringKeyMap(MapDeserializer.java:529) ~[jackson-databind-2.9.9.3.jar:2.9.9.3]
+        at com.fasterxml.jackson.databind.deser.std.MapDeserializer.deserialize(MapDeserializer.java:364) ~[jackson-databind-2.9.9.3.jar:2.9.9.3]
+        at com.fasterxml.jackson.databind.deser.std.MapDeserializer.deserialize(MapDeserializer.java:29) ~[jackson-databind-2.9.9.3.jar:2.9.9.3]
+        at com.fasterxml.jackson.databind.ObjectMapper._readMapAndClose(ObjectMapper.java:4014) ~[jackson-databind-2.9.9.3.jar:2.9.9.3]
+        at com.fasterxml.jackson.databind.ObjectMapper.readValue(ObjectMapper.java:3078) ~[jackson-databind-2.9.9.3.jar:2.9.9.3]
+        at org.springframework.batch.core.repository.dao.Jackson2ExecutionContextStringSerializer.deserialize(Jackson2ExecutionContextStringSerializer.java:70) ~[spring-batch-core-4.1.2.RELEASE.jar:4.1.2.RELEASE]
+        at org.springframework.batch.core.repository.dao.Jackson2ExecutionContextStringSerializer.deserialize(Jackson2ExecutionContextStringSerializer.java:50) ~[spring-batch-core-4.1.2.RELEASE.jar:4.1.2.RELEASE]
+        at org.springframework.batch.core.repository.dao.JdbcExecutionContextDao$ExecutionContextRowMapper.mapRow(JdbcExecutionContextDao.java:325) ~[spring-batch-core-4.1.2.RELEASE.jar:4.1.2.RELEASE]
+        ... 35 common frames omitted
     ```
 <hr/>
 * 이런 에러가 발생을 하는 이유는 
