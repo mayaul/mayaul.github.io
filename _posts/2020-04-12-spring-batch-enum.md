@@ -11,7 +11,8 @@ tag:
 ### 들어 가면서
 * spring batch 에서 database 를 지정을 해서 사용을 하면 배치의 수행 이력의 다양한 정보들이 database 에 남아 있게 됩니다.
 * 이때 job context, step context 에 있던 정보들도 table 에 저장이 됩니다.
-* 간단히 예제를 만들어 보겠습니다.
+* 간단히 [예제](https://github.com/mayaul/spring-batch-context-enum) 를 만들어 보겠습니다.
+
 ### 예제 구성
 * application yml
 ``` yaml
