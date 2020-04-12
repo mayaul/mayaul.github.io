@@ -34,7 +34,7 @@ spring:
 <br/>
     - spring.batch.initialize-schema: always 로 설정하면 spring batch 에서 사용하는 table 을 자동으로 생성을 하게 됩니다.
         + 기본값은 `EMBEDDED` 이며, `ALWAYS, EMBEDDED, NEVER` 옵션도 있습니다.
-
+<hr/>
 ``` java
     public Job sampleJob() {
         return jobBuilderFactory.get("sample job")
@@ -68,6 +68,7 @@ spring:
 ```
 * 이렇게 배치잡을 설정을 하고 JobExecutionListener 를 통해서 jobExecutionContext 에 enum 을 넣었습니다.
 * 그리고 stepExecutionContext 도 아래와 비슷한 방법으로 StepExecutionListener 을 이용해서 넣었습니다.
+<br/>
 ```java
     public class MyJobListener implements JobExecutionListener {
     
@@ -97,7 +98,7 @@ spring:
 {"batch.taskletType":"io.github.mayaul.batch.job.SampleBatchConfig$$Lambda$316/0x0000000800371840","stepExecutionContextKey":["java.util.ArrayList",[["io.github.mayaul.batch.job.TestEnum","A"],["io.github.mayaul.batch.job.TestEnum","B"],["io.github.mayaul.batch.job.TestEnum","C"]]],"batch.stepType":"org.springframework.batch.core.step.tasklet.TaskletStep"}
         ```
 * 이제 `TestEnum` enum 에서 C를 없애고 다시 돌려보겠습니다.
-    - 당연히 Listener 에서도 `TestEnum.C` 를 사용하는 곳을 모두 지워도 아래와 같은 오류를 만나게 됩니다.
+    - 당연히 Listener 에서도 `TestEnum.C` 를 사용하는 곳을 모두 지워도 아래와 같은 오류를 만나게 됩니다.<br/>
     ```java
 Caused by: com.fasterxml.jackson.databind.exc.InvalidFormatException: Cannot deserialize value of type `io.github.mayaul.batch.job.TestEnum` from String "C": value not one of declared Enum instance names: [A, B]
  at [Source: (ByteArrayInputStream); line: 1, column: 178] (through reference chain: java.util.HashMap["jobExecutionContextKey"]->java.util.ArrayList[2])
