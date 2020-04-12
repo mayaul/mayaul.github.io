@@ -14,7 +14,9 @@ tag:
 * 간단히 [예제](https://github.com/mayaul/spring-batch-context-enum) 를 만들어 보겠습니다.
 
 ### 예제 구성
+
 * application yml
+
 ``` yaml
 mayaul:
   batch:
@@ -29,6 +31,7 @@ spring:
   batch:
     initialize-schema: always
 ```
+<br/>
     - spring.batch.initialize-schema: always 로 설정하면 spring batch 에서 사용하는 table 을 자동으로 생성을 하게 됩니다.
         + 기본값은 `EMBEDDED` 이며, `ALWAYS, EMBEDDED, NEVER` 옵션도 있습니다.
 
