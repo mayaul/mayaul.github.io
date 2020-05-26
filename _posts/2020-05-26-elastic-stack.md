@@ -15,14 +15,14 @@ tag:
 ### 설치하기
 * elastic
     - [https://www.elastic.co/guide/en/elasticsearch/reference/current/docker.html](https://www.elastic.co/guide/en/elasticsearch/reference/current/docker.html)
-        + docker image: `docker pull docker.elastic.co/elasticsearch/elasticsearch:7.7.0'
+        + docker image: `docker pull docker.elastic.co/elasticsearch/elasticsearch:7.7.0`
         + docker run command
         ``` bash
 docker run -p 9200:9200 -p 9300:9300 -e "discovery.type=single-node" docker.elastic.co/elasticsearch/elasticsearch:7.7.0
         ```
 * kibana
     - [https://www.elastic.co/guide/en/kibana/current/docker.html](https://www.elastic.co/guide/en/kibana/current/docker.html)
-        + docker image: `docker pull docker.elastic.co/kibana/kibana:7.7.0'
+        + docker image: `docker pull docker.elastic.co/kibana/kibana:7.7.0`
         + docker run command
         ``` bash
 docker run --link YOUR_ELASTICSEARCH_CONTAINER_NAME_OR_ID:elasticsearch -p 5601:5601 {docker-repo}:{version}
@@ -30,10 +30,7 @@ docker run --link YOUR_ELASTICSEARCH_CONTAINER_NAME_OR_ID:elasticsearch -p 5601:
 * logstash 
     - [https://www.elastic.co/guide/en/logstash/current/docker.html](https://www.elastic.co/guide/en/logstash/current/docker.html)
         + docker image: `docker pull docker.elastic.co/logstash/logstash:7.7.0`
-        + docker run command
-        ``` bash
-       
-        ```
+         
 * filebeat
     - [https://www.elastic.co/guide/en/beats/filebeat/current/running-on-docker.html](https://www.elastic.co/guide/en/beats/filebeat/current/running-on-docker.html)
         + docker image: `docker pull docker.elastic.co/beats/filebeat:7.7.0`
