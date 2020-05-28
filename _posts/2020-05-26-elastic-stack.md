@@ -30,7 +30,10 @@ docker run --link YOUR_ELASTICSEARCH_CONTAINER_NAME_OR_ID:elasticsearch -p 5601:
 * logstash 
     - [https://www.elastic.co/guide/en/logstash/current/docker.html](https://www.elastic.co/guide/en/logstash/current/docker.html)
         + docker image: `docker pull docker.elastic.co/logstash/logstash:7.7.0`
-         
+        + docker run command
+        ``` bash
+docker run --name logstash -d docker.elastic.co/logstash/logstash:7.7.0
+        ```         
 * filebeat
     - [https://www.elastic.co/guide/en/beats/filebeat/current/running-on-docker.html](https://www.elastic.co/guide/en/beats/filebeat/current/running-on-docker.html)
         + docker image: `docker pull docker.elastic.co/beats/filebeat:7.7.0`
