@@ -38,10 +38,10 @@ public class Interceptor extends EmptyInterceptor {
 }
 ```
 * interceptor 설정하기 
-** application.yaml (full package 경로를 포함한 class path)
-``` java
-spring.jpa.properties.hibernate.session_factory.interceptor: com.github.mayaul.Interceptor
-```
+    - application.yaml (full package 경로를 포함한 class path)
+    ``` java
+    spring.jpa.properties.hibernate.session_factory.interceptor: com.github.mayaul.Interceptor
+    ```
 
 * 한계점
     - checking 해야하는 field 추가/변경/삭제 시에 관리비용 많이 들어갈 수 있다.
