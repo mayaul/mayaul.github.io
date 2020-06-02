@@ -44,8 +44,8 @@ public class Interceptor extends EmptyInterceptor {
     ```
 
 * 한계점
-    - checking 해야하는 field 추가/변경/삭제 시에 관리비용 많이 들어갈 수 있다.
-    - 뭐가 변경이 되었는지를 확인할려면, `propertyNames` 로 모든 field 를 조회를 해야한다.
+    - checking 해야하는 field 추가/변경/삭제 시에 관리비용 많이 들어갈 수 있습니다.
+    - 뭐가 변경이 되었는지를 확인할려면, `propertyNames` 로 모든 field 를 조회를 해야합니다.
 
 ### using Listener
 * Listener 추가
@@ -89,14 +89,14 @@ public class HibernateListenerConfig {
 }
 ```
 
-    - `PostUpdateEvent#getDirtyProperties` 에 변경된 필드가 있다.
+    - `PostUpdateEvent#getDirtyProperties` 에 변경된 필드가 있습니다.
         ```java
         event.getOldState()[event.dirtyProperties[0]]
         event.getState()[event.dirtyProperties[0]]
         event.getOldState()[event.dirtyProperties[1]]
         event.getState()[event.dirtyProperties[1]]
         ``` 
-        이렇게 조회하면 변경된 필드에 대해서만 이전과 현재값을 알 수 있다.
+        이렇게 조회하면 변경된 필드에 대해서만 이전과 현재값을 알 수 있습니다.
 
 
 ### 참고 자료
