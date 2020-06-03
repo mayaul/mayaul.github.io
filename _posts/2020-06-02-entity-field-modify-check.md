@@ -89,15 +89,26 @@ public class HibernateListenerConfig {
 }
 ```
 
-    - `PostUpdateEvent#getDirtyProperties` 에 변경된 필드가 있습니다.
+* `PostUpdateEvent#getDirtyProperties` 에 변경된 필드가 있습니다.
+```java
+event.getOldState()[event.dirtyProperties[0]]
+event.getState()[event.dirtyProperties[0]]
+event.getOldState()[event.dirtyProperties[1]]
+event.getState()[event.dirtyProperties[1]]
+``` 
+이렇게 조회하면 변경된 필드에 대해서만 이전과 현재값을 알 수 있습니다.
+    - `event.dirtyProperties` 에는 변경된 필드의 순서값(field type integer)이 들어가 있습니다.
+        + entity 의 순서가 변경이 된다면 동일한 field 이지만, 체크를 다시 못하게 될 수 있습니다.
+        + 이때, 아래와 같이 코드를 작성하면 필드의 이름을 이용해서 해당 필드의 값이 변경이 되었는지 확인 할 수 있습니다.
         ```java
-        event.getOldState()[event.dirtyProperties[0]]
-        event.getState()[event.dirtyProperties[0]]
-        event.getOldState()[event.dirtyProperties[1]]
-        event.getState()[event.dirtyProperties[1]]
-        ``` 
-        이렇게 조회하면 변경된 필드에 대해서만 이전과 현재값을 알 수 있습니다.
+        event.getPersister().getPropertyNames()[dirtyProperty].equals(CHECK_FIELD)
+        ```
 
+### 마무리
+* 지금까지 Envers 와는 다르게, Entity 의 특정 필드의 변경사항만 체크를 할 수있는 방법을 알아 보았습니다.
+    - 이렇게 하면 entity 의 특정 필드 값만 변경이 되었을 때, 별도의 table 에 변경내역을 저장을 할 수 있습니다.
+    - entity 의 특정 필드 변경내역만 제공의 필요성이 있을 때, 유용하게 쓸 수 있을 것 같습니다.
+* 감사합니다.
 
 ### 참고 자료
 > https://kwonnam.pe.kr/wiki/java/hibernate/interceptor
