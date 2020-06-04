@@ -111,6 +111,6 @@ event.getState()[event.dirtyProperties[1]]
 * 감사합니다.
 
 ### 참고 자료
-> https://kwonnam.pe.kr/wiki/java/hibernate/interceptor
-> https://stackoverflow.com/questions/43472893/hibernate-envers-get-only-changed-fields
-> https://vladmihalcea.com/hibernate-event-listeners/
+> https://kwonnam.pe.kr/wiki/java/hibernate/interceptor <br/>
+> https://stackoverflow.com/questions/43472893/hibernate-envers-get-only-changed-fields <br/>
+> https://vladmihalcea.com/hibernate-event-listeners <br/>
