@@ -241,8 +241,6 @@ spring.webflux.static-path-pattern: /static/**
   - 실제로 해당 resource 경로를 브라우저에 호출해도 404가 발생을 하고, `/static/static/**` 이렇게 앞에 /static 을 한번 더 넣어줘야 해결이 됩니다. 
 
 * 이것을 해결하기 위해서 저는 webpack 설정을 override 하는 방법으로 진행을 했습니다. 
-  - 추가로 이 문제를 해결 하는 방법은, gradle 를 이용해서 copy 하는 target 경로를 수정하는 방법도 있을 것 같습니다. 
-
   - package.json 수정하기
 ``` javascript
 {
