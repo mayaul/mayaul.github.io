@@ -31,7 +31,7 @@ tag:
 3. S3 설정을 이용해서, 최근 7일에 대한 파일만 남기도록 설정을 합니다. 
 
 #### 복구를 진행하는 방식
-1. 저는 [Packer](https://woowabros.github.io/experience/2019/04/20/ami-packer-ansible.html) 를 이용해서 AMI 를 만들었습니다. 
+1. 저는 [Packer](https://www.packer.io/) 를 이용해서 AMI 를 만들었습니다. 
     - 회사의 표준 AMI 에 Jenkins 를 설치를 하고 설정을 한다음에 AMI로 만들었습니다.   
     - 이렇게 하면 Jenkins 에 문제가 생겼을때 만든 AMI 를 이용해서 바로 EC2를 만들고, 백업된 tar 파일을 이용해서 압축만 풀면 바로 복구가 가능합니다.
 2. Jenkins EC2 까지 없어졌다면, 1번에서 만든 AMI 를 이용해서 EC2를 생성을 합니다.
@@ -147,3 +147,8 @@ Build step 'Execute shell' marked build as failure
     - 해결방법은 `Jenkins 관리 -> Global Tool Configuration` 으로 이동하면 JDK 경로가 설정이 되어 있습니다. 
     - 이 경로를 JDK 가 설치된 경로로 설정하면 됩니다.
 ![!JDK configuration](/assets/img/posts/jenkins/jenkins_6.png)
+
+### 참고 사이트
+> https://medium.com/@bennirus/automated-daily-backups-of-jenkins-master-to-amazon-s3-bucket-1ba6e875c0f0
+> https://blog.leocat.kr/notes/2020/02/01/jenkins-multiple-jdk-on-jenkins
+> https://woowabros.github.io/experience/2019/04/20/ami-packer-ansible.html
