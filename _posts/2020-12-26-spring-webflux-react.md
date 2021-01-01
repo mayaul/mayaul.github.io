@@ -18,6 +18,7 @@ tag:
   - [인프런](https://www.inflearn.com/) 과 [유튜브](https://www.youtube.com/) 를 통해서 좀 학습을 했습니다.
   - 저 같은 경우는 유튜브로 통해서 무료강좌를 하나 듣고, 인프런으로 2개강좌를 결제해서 들었습니다.
 * 강좌를 많이 보면 많은 강사들이 VisualStudioCode 를 사용을 하고 있는데요, 저는 주로 백엔드 개발자이라서 사용하는 툴이 IntelliJ 입니다.
+* [예제파일](https://github.com/mayaul/web-flux-with-react) 를 다운로드 하시면 최종버전을 확인 하실 수 있습니다.
 
 ### 일단은 react 기본 예제 프로그램 만들기
 * 일단 기본적으로 Gradle 을 이용해서 프로젝트 구조를 잡은 다음에 `/src/main` 하위에 `front` 라는 디렉토리를 생성을 했습니다.
