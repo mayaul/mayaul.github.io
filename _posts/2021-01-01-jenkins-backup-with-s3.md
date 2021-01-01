@@ -149,6 +149,6 @@ Build step 'Execute shell' marked build as failure
 ![!JDK configuration](/assets/img/posts/jenkins/jenkins_6.png)
 
 ### 참고 사이트
-> https://medium.com/@bennirus/automated-daily-backups-of-jenkins-master-to-amazon-s3-bucket-1ba6e875c0f0
-> https://blog.leocat.kr/notes/2020/02/01/jenkins-multiple-jdk-on-jenkins
+> https://medium.com/@bennirus/automated-daily-backups-of-jenkins-master-to-amazon-s3-bucket-1ba6e875c0f0  
+> https://blog.leocat.kr/notes/2020/02/01/jenkins-multiple-jdk-on-jenkins  
 > https://woowabros.github.io/experience/2019/04/20/ami-packer-ansible.html
