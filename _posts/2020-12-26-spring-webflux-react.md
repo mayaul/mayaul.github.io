@@ -8,7 +8,7 @@ published : true
 tag:
 - spring boot
 - spring boot webflux
-- react
+- react.js
 - type-script
 ---
 ### 들어가면서
