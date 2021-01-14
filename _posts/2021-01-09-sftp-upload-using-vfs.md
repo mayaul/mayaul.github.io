@@ -148,6 +148,26 @@ org.apache.commons.vfs2.FileSystemException: Invalid absolute URI "sftp://user:*
 	at org.apache.commons.vfs2.impl.DefaultFileSystemManager.resolveFile(DefaultFileSystemManager.java:711)
 	at org.apache.commons.vfs2.impl.DefaultFileSystemManager.resolveFile(DefaultFileSystemManager.java:648)
 ```
+
+#### 비밀번호에 `#` 이 있으면 안된다. 
+* 위에 `@` 문제를 통과를 하고나면, `UriParser#checkUriEncoding` decoding 을 하게 됩니다. 
+* 여기서 `#` 문자열이 있다면 HEX값으로 생각을 하고 decoding 을 하게 됩니다. 
+* 그래서 저는 password 를 encoding 해서 설정했습니다. 
+    ``` java 
+    public static String createConnectionString(String hostName, String username, String password, String remoteFilePath) throws UnsupportedEncodingException {
+        return "sftp://" + username + ":" + URLEncoder.encode(password, StandardCharsets.UTF_8.name()) + "@" + hostName + remoteFilePath;
+    }
+    ```
+* 위 예제 코드에 있는 `createConnectionString` 를 encoding 하는것으로 변경하면 더이상 에러는 발생하지 않을겁니다.
+* 바로 위에 있는 `@` 문제도 encoding 을 하니까 해결이 되네요
+* 오류 StackTrace
+```
+org.apache.commons.vfs2.FileSystemException: Invalid absolute URI "sftp://user:***@host/path/filename.csv".
+	at org.apache.commons.vfs2.provider.AbstractOriginatingFileProvider.findFile(AbstractOriginatingFileProvider.java:52)
+	at org.apache.commons.vfs2.impl.DefaultFileSystemManager.resolveFile(DefaultFileSystemManager.java:711)
+	at org.apache.commons.vfs2.impl.DefaultFileSystemManager.resolveFile(DefaultFileSystemManager.java:648)
+```
+
 ### 참고 사이트
 > https://commons.apache.org/proper/commons-vfs/  
 > https://m.blog.naver.com/PostView.nhn?blogId=racoon_z&logNo=220915890265&proxyReferer=https:%2F%2Fwww.google.com%2F  
