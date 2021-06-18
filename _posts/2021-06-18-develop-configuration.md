@@ -32,6 +32,6 @@ tag:
 ### java: Compilation failed: internal java compiler error
 #### 해결방법
 * `Preferences | Build, Execution, Deployment | Compiler` 로 이동해서 `Shared build process heap size` 변경
-** 저는 기본이 700으로 되어있었고, 2000으로 변경했더니 빌드 성공 했습니다.
-  ![!JDK configuration](/assets/img/posts/develop_configuration/compiler_shared_heap_size.png)
+  - 저는 기본이 700으로 되어있었고, 2000으로 변경했더니 빌드 성공 했습니다.
+    ![!JDK configuration](/assets/img/posts/develop_configuration/compiler_shared_heap_size.png)
   
