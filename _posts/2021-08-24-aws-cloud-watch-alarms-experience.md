@@ -20,7 +20,7 @@ tag:
 #### 4가지 알람 설정을 하고 있습니다. 
 1. DLQ 발생
 2. 오래된 메시지 
-3. 현재 메시지 개수
+3. 적재된 메시지 개수
 4. 처리중인 메시지 개수
 
 하나씩 차례대로 어떻게 설정했는지 보겠습니다.
@@ -37,11 +37,11 @@ tag:
 * consumer 의 경우 더이상 처리가 큐가 필요 없어 SQS 에 있는 메시지 처리를 중단을 한다면 오래된 메시지가 발생이 될 수 있고 이런경우는 적재된 메시지를 삭제 후 SQS를 없애면 됩니다.
 ![cloud watch 설정 오래된 메시지](/assets/img/posts/cloudwatch/cloudwatchex_oldest.png)
   
-#### 현재 메시지 개수 
+#### 적재된 메시지 개수 
 * 이 상황은 consumer 가 처리하는 속도보다, producer 가 보내는 속도가 빨라서 점점 메시지 적재되는 개수가 많아지고 있는 현상 입니다. 
 * consumer 를 늘리던가, 각 consumer 에서 처리하는 메시지의 개수를 늘려주는 등의 조치가 필요합니다.
 * `오래된 메시지` 에서 설명한 상황에서도 발생할 수 있고 조치는 동일하게 해주시면 됩니다. 
-![cloud watch 설정 메시지 개수](/assets/img/posts/cloudwatch/cloudwatchex_count.png)
+![cloud watch 설정 적재된 메시지 개수](/assets/img/posts/cloudwatch/cloudwatchex_count.png)
 
 #### 처리중인 메시지 개수
 * 이 상황의 경우 consumer 들이 메시지를 수신해서 처리는 하고 있으나, 제대로 처리 했다고 응답이 오지 않은 메시지의 개수를 체크합니다.
