@@ -1,8 +1,8 @@
 ---
 layout: post
-title: "AWS CloudWatch 를 이용한 알람 설정"
-excerpt: "시스템 이상 징후 알람을 누락하지 않기"
-date: 2021-08-19 00:00:00 +0900
+title: "AWS CloudWatch 를 이용한 알람 설정2"
+excerpt: "cloud watch 를 이용해서 내가 설정한 alarm"
+date: 2021-08-24 00:00:00 +0900
 comments: true
 published : true
 tag:
