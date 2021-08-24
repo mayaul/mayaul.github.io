@@ -43,7 +43,7 @@ tag:
 1. period 를 1분이 아닌 5분으로 설정한다. 
    - 이 방법의 경우 5분정도로 설정을 하면 `backfill` 현상이 있더라도 5분내에는 다 수집이 되기 때문에 알람이 보내지는 조건이 되면 알람이 발송 됩니다.
    ![npm run start](/assets/img/posts/cloudwatch/cloudwatch_3.png)
-2. Datapoiints to alarm 설정을 `1 out of 1` 이 아니라 `2 out of 4` 정도로 수정
+2. Datapoints to alarm 설정을 `1 out of 1` 이 아니라 `2 out of 4` 정도로 수정
    - 이 방법의 경우 `backfill` 현상이 있어도, 4개 구간을 평가하기 때문에 알람이 발송이 되게 됩니다. 
    ![npm run start](/assets/img/posts/cloudwatch/cloudwatch_4.png)
 
