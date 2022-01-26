@@ -14,8 +14,6 @@ tag:
  Intellij IDEA 를 이용해서 Java(Spring) 개발을 하면서 설정을 하면 좋은 것과 유용한 plugin 모음
 
 ## Plugin
-#### [Advanced Java Folding](https://plugins.jetbrains.com/plugin/9320-advanced-java-folding)
-* Java code 를 읽기 쉽게 변환해 준다.
 
 #### [DbUnit Extractor](https://plugins.jetbrains.com/plugin/7958-dbunit-extractor)
 * DbUnit 테스트를 진행을 하면 DB 의 데이터를 쉽게 xml 로 변환을 하고 싶을 요구가 생길때가 있다.
@@ -36,29 +34,40 @@ tag:
 #### [Lombok](https://plugins.jetbrains.com/plugin/6317-lombok)
 * lombok 을 사용한다면 필수
 
-#### [Material Theme UI](https://plugins.jetbrains.com/plugin/8006-material-theme-ui)
-* 뭔가 화려한 intellij theme 를 원한다면 좋은 plugin
-
 #### [Rainbow Brackets](https://plugins.jetbrains.com/plugin/10080-rainbow-brackets)
 * `{ ... }`, `(((( ... ))))` 가 많다면 무지개색상으로 구분을 해준다.
-
-#### [Request mapper](https://plugins.jetbrains.com/plugin/9567-request-mapper)
-* Rest API 를 찾기 쉽게 해준다.
-
-#### [RestfulToolkit](https://plugins.jetbrains.com/plugin/10292-restfultoolkit)
-* RestfulToolkit 이라는 view 가 생기며, 거기서 검색을 하면 full url 을 복사할 수 있다.
-* Controller class 와 method 에서 rest api 분리해놓고 사용한다면 full url 복사시 유용하다.
 
 #### [Sexy Editor](https://plugins.jetbrains.com/plugin/1833-sexy-editor)
 * editor 배경화면을 언어별로 설정을 할 수 있다.
 
 #### [SonarLint](https://plugins.jetbrains.com/plugin/7973-sonarlint)
 * sonarqube 를 사용을 한다면, intellij 에서 분석을 돌려 볼 수 있다.
+
 #### [String Manipulation](https://plugins.jetbrains.com/plugin/2162-string-manipulation)
 * string 관련 반복성 작업에 대한 변경작업이 필요 할때 유용한 plugin
 
 #### [Upsource Integration](https://plugins.jetbrains.com/plugin/7431-upsource-integration)
 * upsource 를 이용하여, code review 를 한다면 필수 plugin
+
+### [Kotlin Code Sorter](https://plugins.jetbrains.com/plugin/11163-kotlin-code-sorter)
+* kotlin 코드를 일관성 있게 정렬 해줌
+
+### [kotlin fill class](https://plugins.jetbrains.com/plugin/10942-kotlin-fill-class)
+* kotlin 에서 객체 생성을 할 때 사용, parameter 를 자동으로 넣어 줌
+
+### [Ktlint](https://plugins.jetbrains.com/plugin/15057-ktlint-unofficial-)
+* 코틀린 개발시 코딩 컨벤션을 유지하게 도와 줌
+
+### [Save Actions](https://plugins.jetbrains.com/plugin/7642-save-actions)
+* 코딩 컨벤션 위반시 소스코드 저장시 에러를 발생시켜 강제로 코딩컨벤션을 유지하게 해줌
+
+#### [미사용] [Advanced Java Folding](https://plugins.jetbrains.com/plugin/9320-advanced-java-folding)
+* Java code 를 읽기 쉽게 변환해 준다.
+* 미사용 이유: 코드리뷰시 이 plugin 을 사용하지 않은 사람은 문법적 오류로 오해를 하는 경우가 있음
+
+#### [미사용] [Material Theme UI](https://plugins.jetbrains.com/plugin/8006-material-theme-ui)
+* 뭔가 화려한 intellij theme 를 원한다면 좋은 plugin
+* 미사용 이유: 유료화 됨, 돈을 내고 사용할만큼은 아닌듯 무료인 Lite 버전도 있음
 
 ## Setting
 #### Preferences new projects
@@ -68,7 +77,8 @@ tag:
 * ![Preferences new projects](/assets/img/posts/intellij_setting_plugin/preferences-new-project.png) 에서 설정을 해주면 신규 프로젝를 생성을 할때 기본값으로 설정 할 수있다.
 
 #### Font
-* [D2coding]('https://github.com/naver/d2codingfont') 몇가지 서체를 써봤지만, 한글도 잘 나오고 개발에 필요한 `i,I,l` 와 `0, O`구분이 명확한다
+* 요즘에는 D2Coding 보다는 monoLisa 사용 중 
+* [미사용] [D2coding]('https://github.com/naver/d2codingfont') 몇가지 서체를 써봤지만, 한글도 잘 나오고 개발에 필요한 `i,I,l` 와 `0, O`구분이 명확한다
 
 #### Gradle
 * path: `Build, Execution, Deployment | Build Tools | Gradle`
@@ -101,4 +111,3 @@ tag:
 #### Spock(groovy) 에서 자동으로 변수를 만들 때 def 가 아닌 정확한 타입으로 명시하기
 * groovy 에서 변수를 자동으로 생성을 하면 `def` 라는 type 으로 생성이 된다.
 ** 이때 `shift+tap` 을 눌러 def 로 포커스를 변경을 한다음에 해당 변수의 정확한 타입으로 변경을 하면 그 다음부터는 기억을 해서 모든 변수 생성시에 정확한 타입으로 생성이 된다.
-
