@@ -36,7 +36,7 @@ tag:
   - 개발이 완료되거나, develop, beta 배포가 필요하면 언제든 develop, beta 로 머지해서 배포
 * review branch
   - merge request 로 코드리뷰를 진행을 하면서, target branch 가 필요해서 생성
-  - master 에서 checkout 해서 생성
+  - feature branch 가 push 되면, master 에서 checkout 해서 생성 후 merge request 생성
   - 코드리뷰가 종료가 되면 review 브랜치는 feature 브랜치를 개발 담당자가 삭제 
 
 ### 자동화 할 수 있는건 자동화
